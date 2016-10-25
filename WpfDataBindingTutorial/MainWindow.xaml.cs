@@ -26,15 +26,10 @@ namespace WpfDataBindingTutorial
         {
             InitializeComponent();
             ICollectionView dataview = CollectionViewSource.GetDefaultView(lv.ItemsSource);
-            
-            
+                     
             //dataview.Filter += new FilterEventHandler(ShowOnlyBargainsFilter);
-            
-            
+                      
             //dataview.Filter += new Predicate<object>(YearPredicate);
-
-
-
             PropertyGroupDescription description = new PropertyGroupDescription("Year");
 
             dataview.GroupDescriptions.Add(description);
