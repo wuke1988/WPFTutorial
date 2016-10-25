@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfDataBindingTutorial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:src="clr-namespace:WpfDataBindingTutorial"
+        mc:Ignorable="d"
+        xmlns:c="clr-namespace:System.Collections;assembly=mscorlib"  
+        xmlns:p="clr-namespace:System;assembly=mscorlib"
+        Title="MainWindow" Height="350" Width="525">
+    <ListView x:Name="lv" VerticalAlignment="Center" HorizontalAlignment="Center"  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" >
+        <ListView.ItemsSource>
+            <c:ArrayList>
+                <p:DateTime>1993/1/1 12:22:02</p:DateTime>
+                <p:DateTime>1993/1/2 13:2:01</p:DateTime>
+                <p:DateTime>1997/1/3 2:1:6</p:DateTime>
+                <p:DateTime>1997/1/4 13:6:55</p:DateTime>
+                <p:DateTime>1999/2/1 12:22:02</p:DateTime>
+                <p:DateTime>1998/2/2 13:2:01</p:DateTime>
+                <p:DateTime>2000/2/3 2:1:6</p:DateTime>
+                <p:DateTime>2002/2/4 13:6:55</p:DateTime>
+                <p:DateTime>2001/3/1 12:22:02</p:DateTime>
+                <p:DateTime>2006/3/2 13:2:01</p:DateTime>
+                <p:DateTime>2004/3/3 2:1:6</p:DateTime>
+                <p:DateTime>2004/3/4 13:6:55</p:DateTime>
+            </c:ArrayList>
+        </ListView.ItemsSource>
+        <ListView.View>
+            <GridView>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=Year}" 
+                  Header="Year"
+                  Width="100"/>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=Month}" 
+                  Header="Month"
+                  Width="100"/>
+                <GridViewColumn 
+                  Header="Day"
+                  Width="100">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Day}"  TextDecorations="Underline" Foreground="Blue" Cursor="Hand"></TextBlock>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+            </GridView>
+        </ListView.View>
+    </ListView>
+</Window>
