@@ -15,7 +15,6 @@ namespace WpfDataBindingTutorial
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             BindingGroup bg = value as BindingGroup;
-
             // Get the source object.
             PurchaseItem item = bg.Items[0] as PurchaseItem;
 
