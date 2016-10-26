@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfDataTemplateTutorial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDataTemplateTutorial"
+        xmlns:m ="clr-namespace:SDKSample;assembly=SDKSample"
+        mc:Ignorable="d" DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:MyTaskListDataTemplateSelector x:Key="myDataTemplateSelector"></local:MyTaskListDataTemplateSelector>
+        <DataTemplate x:Key="myTemplate"  DataType="{x:Type m:MyTask}">
+            <Border Name="border" BorderBrush="Aqua"  BorderThickness="1" Margin="5" Padding="5">
+                <StackPanel>
+                    <TextBlock Text="{Binding TaskName }"></TextBlock>
+                    <TextBlock  Text="{Binding Description}" ></TextBlock>
+                    <TextBlock Text="{Binding  Priority}"></TextBlock>
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding TaskType}">
+                    <DataTrigger.Value>
+                        <m:TASKType>Work</m:TASKType>
+                    </DataTrigger.Value>
+                    <Setter TargetName="border" Property="BorderBrush" Value="red"></Setter>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ListBox HorizontalContentAlignment="Stretch" ItemsSource="{ Binding MyTaskCollections}"   ItemTemplateSelector="{StaticResource myDataTemplateSelector}">
+            <ListBox.Resources>
+
+                <DataTemplate x:Key="importantTaskTemplate" DataType="{x:Type m:MyTask}">
+                    <DataTemplate.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="20"></Setter>
+                        </Style>
+                    </DataTemplate.Resources>
+                    <Border Name="border" BorderBrush="Red" BorderThickness="1"  Padding="5" Margin="5">
+                        <DockPanel HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Path=Description}" />
+                            <TextBlock>!</TextBlock>
+                        </DockPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.Resources>
+        </ListBox>
+    </Grid>
+</Window>
