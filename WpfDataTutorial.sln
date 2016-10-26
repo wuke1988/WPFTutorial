@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataBindingTutorial", "WpfDataBindingTutorial\WpfDataBindingTutorial.csproj", "{286F2A11-94CC-444D-9086-F24FA7C37047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataTemplateTutorial", "F:\个人项目\WpfDataTemplateTutorial\WpfDataTemplateTutorial\WpfDataTemplateTutorial.csproj", "{85BFE2DB-8F33-4017-A5A5-C39958B0F604}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKSample", "SDKSample\SDKSample.csproj", "{F1E6ABC7-E215-4C4F-BBA5-102C174CC8EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKSample", "F:\个人项目\WpfDataTemplateTutorial\SDKSample\SDKSample.csproj", "{F1E6ABC7-E215-4C4F-BBA5-102C174CC8EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataTemplateTutorial", "WpfDataTemplateTutorial\WpfDataTemplateTutorial.csproj", "{85BFE2DB-8F33-4017-A5A5-C39958B0F604}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{286F2A11-94CC-444D-9086-F24FA7C37047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{286F2A11-94CC-444D-9086-F24FA7C37047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{286F2A11-94CC-444D-9086-F24FA7C37047}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F1E6ABC7-E215-4C4F-BBA5-102C174CC8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F1E6ABC7-E215-4C4F-BBA5-102C174CC8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1E6ABC7-E215-4C4F-BBA5-102C174CC8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1E6ABC7-E215-4C4F-BBA5-102C174CC8EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85BFE2DB-8F33-4017-A5A5-C39958B0F604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
