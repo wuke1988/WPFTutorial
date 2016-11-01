@@ -25,9 +25,15 @@ namespace DependencyPropertyAndRoutedEvent
             InitializeComponent();
         }
 
-        private void circle_FillChanged(object sender, RoutedEventArgs e)
+        private void circle_FillChanged(object sender, FillChangedRoutedEventArgs e)
         {
 
+        }
+
+        private void circle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show($@" {sender.ToString()}  Mouse is down!");
+            //e.Handled = true;
         }
     }
 }
