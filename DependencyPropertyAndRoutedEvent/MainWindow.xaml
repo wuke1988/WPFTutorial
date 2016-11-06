@@ -12,5 +12,10 @@
             <RowDefinition Height="48*"/>
         </Grid.RowDefinitions>
         <local:Circle x:Name="circle" MouseDown="circle_MouseDown" FillChanged="circle_FillChanged"></local:Circle>
+        <Button Grid.Row="1" Click="Button_Click" Command="{x:Static ApplicationCommands.New}">Button</Button>
     </Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static ApplicationCommands.New}" CanExecute="CommandBinding_CanExecute"  Executed="CommandBinding_Executed">
+        </CommandBinding>
+    </Window.CommandBindings>
 </Window>
