@@ -16,9 +16,9 @@ namespace Models
 
         public override string ToString()
         {
-            return string.Format("Name: {0}", Name);
+            return string.Format("Name:{0}",Name);
         }
+        public static Person John = new Person { Name="John"};
 
-        public static Person John = new Person { Name = "John" };
     }
 }

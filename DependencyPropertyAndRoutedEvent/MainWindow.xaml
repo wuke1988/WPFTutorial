@@ -6,11 +6,16 @@
         xmlns:local="clr-namespace:DependencyPropertyAndRoutedEvent"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" DataContext="{Binding RelativeSource={RelativeSource Self}}">
-    <Grid>
+    <Grid     MouseDown="circle_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="271*"/>
             <RowDefinition Height="48*"/>
         </Grid.RowDefinitions>
-        <local:Circle x:Name="circle" FillChanged="circle_FillChanged"></local:Circle>
+        <local:Circle x:Name="circle" MouseDown="circle_MouseDown" FillChanged="circle_FillChanged"></local:Circle>
+        <Button Grid.Row="1" Click="Button_Click" Command="{x:Static ApplicationCommands.New}">Button</Button>
     </Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static ApplicationCommands.New}" CanExecute="CommandBinding_CanExecute"  Executed="CommandBinding_Executed">
+        </CommandBinding>
+    </Window.CommandBindings>
 </Window>

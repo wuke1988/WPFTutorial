@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Controls
+namespace Layout
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
