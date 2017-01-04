@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Controls.csproj", "{8EC12677-4C54-4AB0-BD5B-8B271804436B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentTemplate", "ContentTemplate\ContentTemplate.csproj", "{1672786C-9D2D-4C7A-8F46-D1CA592C9596}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8EC12677-4C54-4AB0-BD5B-8B271804436B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EC12677-4C54-4AB0-BD5B-8B271804436B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EC12677-4C54-4AB0-BD5B-8B271804436B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
