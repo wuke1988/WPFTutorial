@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ContentTemplate
 {
@@ -20,9 +21,19 @@ namespace ContentTemplate
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly DispatcherTimer _timer = new DispatcherTimer(DispatcherPriority.Normal) { Interval = TimeSpan.FromSeconds(1)};
         public MainWindow()
         {
             InitializeComponent();
+            _timer.Tick += _timer_Tick;
+            _timer.IsEnabled = true;
         }
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            clock.time = DateTime.Now.TimeOfDay;
+        }
+
+
     }
 }

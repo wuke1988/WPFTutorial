@@ -51,11 +51,19 @@ namespace ContentTemplate
     {
         public static DependencyProperty TimeProperty = DependencyProperty.Register("Time",typeof(TimeSpan),typeof(Clock1),
             new PropertyMetadata(TimeSpan.Zero, OnTimePropertyChanged));
+        public static DependencyProperty HourNeedleBrushProperty = DependencyProperty.Register("HourNeedleBrush",typeof(Brush),typeof(Clock1),
+            new PropertyMetadata(Brushes.Black));
         public TimeSpan time
         {
             get {return (TimeSpan)GetValue(TimeProperty); }
             set { SetValue(TimeProperty,value); }
         }
+        public Brush HourNeedleBrush
+        {
+            get { return (Brush)GetValue(HourNeedleBrushProperty); }
+            set { SetValue(HourNeedleBrushProperty,value); }
+        }
+
 
         static Clock1()
         {
@@ -63,18 +71,28 @@ namespace ContentTemplate
         }
         private static void OnTimePropertyChanged(DependencyObject d ,DependencyPropertyChangedEventArgs e)
         {
-
+            ((Clock1)d).UpdateNeedles((TimeSpan)e.NewValue);
         }
         public override void OnApplyTemplate()
         {
             _hour = (RotateTransform)Template.FindName("PART_HourTransform", this);
+            _minute = (RotateTransform)Template.FindName("PART_MinuteTransform",this);
+            _second = (RotateTransform)Template.FindName("PART_SecondTransform",this);
+
+            UpdateNeedles(time);
+            base.OnApplyTemplate();
         }
 
         private RotateTransform _hour, _minute, _second;
 
         private void UpdateNeedles(TimeSpan time)
         {
-            
+            if (_hour != null)
+                _hour.Angle = time.Hours / 12.0 *360;
+            if (_minute != null)
+                _minute.Angle = time.Minutes / 60.0 * 360;
+            if (_second != null)
+                _second.Angle = time.Seconds / 60.0 * 360;   
         }
     }
 }

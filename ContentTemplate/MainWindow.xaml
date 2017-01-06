@@ -6,7 +6,59 @@
         xmlns:local="clr-namespace:ContentTemplate"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <TabControl>
+        <TabItem>
+            <UniformGrid Columns="2" Rows="2">
+                <Control>
+                    <Control.Template>
+                        <ControlTemplate TargetType="Control">
+                            <Rectangle Fill="Blue"></Rectangle>
+                        </ControlTemplate>
+                    </Control.Template>
+                </Control>
+                <local:Clock1 x:Name="clock"></local:Clock1>
+                <Button Content="Hello">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Root" Background="{TemplateBinding Background}" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <ScaleTransform x:Name="Scale" ScaleX="1" ScaleY="1" />
+                                </Border.RenderTransform>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="Root"
+                                                                Storyboard.TargetProperty="Background.Color"
+                                                                To="Red" Duration="0:0:0.5"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="Root"
+                                                                 Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                                 To="0.9" Duration="0:0:0.3"/>
+                                                <DoubleAnimation Storyboard.TargetName="Root"
+                                                                 Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                                 To="0.9" Duration="0:0:0.3"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition From="MouseOver"
+                                                              GeneratedDuration="0:0:0.5"/>
+                                            <VisualTransition From="Pressed"
+                                                              GeneratedDuration="0:0:0.5"/>
+                                        </VisualStateGroup.Transitions>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </UniformGrid>
+        </TabItem>
+    </TabControl>
 </Window>
