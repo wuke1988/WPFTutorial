@@ -74,7 +74,9 @@ namespace ContentTemplate
 
         private void UpdateNeedles(TimeSpan time)
         {
-            
+            _hour.Angle = time.Hours / 12 * 360;
+            _minute.Angle = time.Minutes / 60 * 360;
+            _second.Angle = time.Seconds / 60 * 360;
         }
     }
 }
