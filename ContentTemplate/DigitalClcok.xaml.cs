@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,9 +25,26 @@ namespace ContentTemplate
     {
         public DigitalClcok()
         {
-            InitializeComponent();           
-        }
+            InitializeComponent();
+            CommandBinding binding = new CommandBinding(SpeakCommand, (ExecuteSpeak), new CanExecuteRoutedEventHandler(CanExecuteSpeak));
+            InputBinding input = new InputBinding(SpeakCommand, new MouseGesture(MouseAction.LeftClick));
 
+            CommandManager.RegisterClassCommandBinding(typeof(DigitalClcok), binding);
+            CommandManager.RegisterClassInputBinding(typeof(DigitalClcok), input);
+
+        }
+        //static DigitalClcok()
+        //{
+        //    //CommandBinding binding = new CommandBinding(SpeakCommand,new ExecutedRoutedEventHandler(ExecuteSpeak), new CanExecuteRoutedEventHandler(CanExecuteSpeak));
+        //    //InputBinding input = new InputBinding(SpeakCommand, new MouseGesture(MouseAction.LeftClick));
+
+        //    //CommandManager.RegisterClassCommandBinding(typeof(DigitalClcok), binding);
+        //    //CommandManager.RegisterClassInputBinding(typeof(DigitalClcok), input);
+        //}
+        public SpeechSynthesizer speaker => new SpeechSynthesizer();
+
+
+        #region DP
         public static readonly DependencyProperty TimeProperty = DependencyProperty.Register("Time",typeof(DateTime),typeof(DigitalClcok),
             new PropertyMetadata(DateTime.Now,new PropertyChangedCallback(TimePropertyChanged)));
 
@@ -46,6 +64,9 @@ namespace ContentTemplate
             });
         }
 
+        #endregion
+
+        #region routedEvent
         public static readonly RoutedEvent TimeUpdatedEvent = EventManager.RegisterRoutedEvent("TimeUpdated",RoutingStrategy.Bubble,
             typeof(RoutedPropertyChangedEventHandler<DateTime>),typeof(DigitalClcok));
 
@@ -55,7 +76,33 @@ namespace ContentTemplate
             remove { RemoveHandler(TimeUpdatedEvent,value); }
         }
 
+        #endregion
 
+
+        public readonly static RoutedUICommand SpeakCommand = new RoutedUICommand("Speak", "Speak", typeof(DigitalClcok));
+
+
+        private  void ExecuteSpeak(object sender, ExecutedRoutedEventArgs e)
+        {
+            DigitalClcok digital = (DigitalClcok)sender;
+
+            digital.SpeakTheTime(digital.Time);
+        }
+        private void SpeakTheTime(DateTime Time)
+        {
+            DateTime time = Time.ToLocalTime();
+            string content = "今天是" + time.Date.ToShortDateString() + " " + time.DayOfWeek + " " + time.ToShortTimeString();
+            speaker.SpeakAsync(content);
+        }
+        private  void CanExecuteSpeak(object sender, CanExecuteRoutedEventArgs e)
+        {
+            DigitalClcok digital = (DigitalClcok)sender;
+
+            if (digital.Time != null)
+                e.CanExecute = true;
+            else
+                e.CanExecute = false;
+        }        
     }
 
     public class DateConverter : IValueConverter
