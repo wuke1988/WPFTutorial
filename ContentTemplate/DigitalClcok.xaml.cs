@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ContentTemplate
 {
@@ -22,9 +24,8 @@ namespace ContentTemplate
     {
         public DigitalClcok()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
-
 
         public static readonly DependencyProperty TimeProperty = DependencyProperty.Register("Time",typeof(DateTime),typeof(DigitalClcok),
             new PropertyMetadata(DateTime.Now,new PropertyChangedCallback(TimePropertyChanged)));
@@ -55,5 +56,48 @@ namespace ContentTemplate
         }
 
 
+    }
+
+    public class DateConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                DateTime datetime = (DateTime)value;
+                return datetime.ToLocalTime().DayOfWeek.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class TimeConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                DateTime datetime = (DateTime)value;
+                return datetime.ToLocalTime().TimeOfDay.ToString(@"hh\:mm\:ss");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

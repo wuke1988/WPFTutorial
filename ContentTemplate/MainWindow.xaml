@@ -58,6 +58,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                <local:DigitalClcok x:Name="digitalclock" Width="auto" Height="auto"></local:DigitalClcok>
             </UniformGrid>
         </TabItem>
     </TabControl>

@@ -32,6 +32,7 @@ namespace ContentTemplate
         private void _timer_Tick(object sender, EventArgs e)
         {
             clock.time = DateTime.Now.TimeOfDay;
+            digitalclock.Time = DateTime.Now;
         }
 
 
