@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26720.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataBindingTutorial", "WpfDataBindingTutorial\WpfDataBindingTutorial.csproj", "{286F2A11-94CC-444D-9086-F24FA7C37047}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Controls.csproj", "{8EC12677-4C54-4AB0-BD5B-8B271804436B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentTemplate", "ContentTemplate\ContentTemplate.csproj", "{1672786C-9D2D-4C7A-8F46-D1CA592C9596}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.ObservableCollectionDemo", "ObservableCollectionDemo\1.ObservableCollectionDemo.csproj", "{B99A64C7-2F70-4B07-8098-52AA933DDCFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,8 +59,15 @@ Global
 		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}
 	EndGlobalSection
 EndGlobal
