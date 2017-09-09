@@ -30,6 +30,7 @@ namespace ContentTemplate
             InputBinding input = new InputBinding(SpeakCommand, new MouseGesture(MouseAction.LeftClick));
 
             CommandManager.RegisterClassCommandBinding(typeof(DigitalClcok), binding);
+            this.CommandBindings.Add(binding);
             CommandManager.RegisterClassInputBinding(typeof(DigitalClcok), input);
 
         }
