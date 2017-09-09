@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26720.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataBindingTutorial", "WpfDataBindingTutorial\WpfDataBindingTutorial.csproj", "{286F2A11-94CC-444D-9086-F24FA7C37047}"
 EndProject
@@ -19,19 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Contro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentTemplate", "ContentTemplate\ContentTemplate.csproj", "{1672786C-9D2D-4C7A-8F46-D1CA592C9596}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part1-Basic", "Part1-Basic", "{BD70238C-C5A0-48DB-87F9-61C25BCD6318}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part2-Deepth", "Part2-Deepth", "{260AC7CF-32CC-49B8-B94F-A9FAEAC546C5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part3-ShapeAndAnimation", "Part3-ShapeAndAnimation", "{57B8EE52-D0E0-49CB-B5C5-7FAAAAA9117B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part4-Template", "Part4-Template", "{248C0F05-F6AB-4F0E-8334-B7165AC07110}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part5-Data", "Part5-Data", "{0652F2C7-2D13-4C67-867A-38CC94610B3A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part6-ComplexControl", "Part6-ComplexControl", "{F5D29764-FA0D-4C9A-902B-16A6AC92B9DC}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part8-Other", "Part8-Other", "{F4A4AFA6-E4D4-422E-919F-A8AB9EEC3441}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.ObservableCollectionDemo", "ObservableCollectionDemo\1.ObservableCollectionDemo.csproj", "{B99A64C7-2F70-4B07-8098-52AA933DDCFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,16 +59,15 @@ Global
 		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1672786C-9D2D-4C7A-8F46-D1CA592C9596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99A64C7-2F70-4B07-8098-52AA933DDCFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{286F2A11-94CC-444D-9086-F24FA7C37047} = {0652F2C7-2D13-4C67-867A-38CC94610B3A}
-		{85BFE2DB-8F33-4017-A5A5-C39958B0F604} = {0652F2C7-2D13-4C67-867A-38CC94610B3A}
-		{3E58DBD6-071E-401F-9160-44F903E4B869} = {BD70238C-C5A0-48DB-87F9-61C25BCD6318}
-		{D2FFFDEE-8040-4DA6-B7E7-F1D032C04158} = {BD70238C-C5A0-48DB-87F9-61C25BCD6318}
-		{8EC12677-4C54-4AB0-BD5B-8B271804436B} = {260AC7CF-32CC-49B8-B94F-A9FAEAC546C5}
-		{1672786C-9D2D-4C7A-8F46-D1CA592C9596} = {248C0F05-F6AB-4F0E-8334-B7165AC07110}
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}
 	EndGlobalSection
 EndGlobal
