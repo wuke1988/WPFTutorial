@@ -52,20 +52,77 @@
             </Grid>
             
         </TabItem>
-        <TabItem  Header="Grid">
-            <Grid ShowGridLines="True">
+        <TabItem  Header="Grid1">
+            <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition />
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <GridSplitter  Grid.Column="3" Grid.RowSpan="3" Width="3" HorizontalAlignment="Left"></GridSplitter>
+                <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Center">GridSplitterDemo1</TextBlock>
+                <Button Content="Left" Grid.Row="1" Grid.Column="0"></Button>
+                <Button Content="Right" Grid.Row="1" Grid.Column="2"></Button>
+                <Button Content="Left" Grid.Row="2" Grid.Column="0" ></Button>
+                <Button Content="Right" Grid.Row="2" Grid.Column="2"></Button>
+                <GridSplitter  Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Width="3"   HorizontalAlignment="Center"></GridSplitter>
+            </Grid>
+        </TabItem>
+        <TabItem  Header="Grid2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="Left Top"></Button>
+                    <Button Grid.Row="1" Content="Left Bottom"></Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button  Grid.Row="0" Content="Top Right"></Button>
+                    <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="2"></GridSplitter>
+                    <Button Grid.Row="2" Content="Bottom Right"></Button>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem  Header="Grid3">
+            <Grid Grid.IsSharedSizeScope="True" Margin="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition SharedSizeGroup="TextLabel"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="A very long bit of text" Margin="5"></Label>
+                    <Label Grid.Column="1" Margin="5" Content="More text"></Label>
+                    <TextBox Grid.Column="2" Margin="5"></TextBox>
+                </Grid>
+                <Grid Grid.Row="2" ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition SharedSizeGroup="TextLabel"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Short" Margin="5"></Label>
+                    <TextBox Grid.Column="1" Margin="5"></TextBox>
+                </Grid>
             </Grid>
         </TabItem>
         <TabItem  Header="UniformGrid">
