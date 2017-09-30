@@ -149,11 +149,11 @@
                 </StackPanel>
                 <WrapPanel Orientation="Horizontal" Height="272" >
                     <UniformGrid Visibility="{Binding ElementName=check1,Path=IsChecked,Converter={StaticResource Converter1}}" Grid.Column="2" Grid.Row="2" Width="150">
-                    <Button Content="1" Margin="10"></Button>
-                    <Button Content="2" Margin="10"></Button>
-                    <Button Content="3" Margin="10"></Button>
-                    <Button Content="4" Margin="10"></Button>
-                </UniformGrid>
+                        <Button Content="1" Margin="10"></Button>
+                        <Button Content="2" Margin="10"></Button>
+                        <Button Content="3" Margin="10"></Button>
+                        <Button Content="4" Margin="10"></Button>
+                    </UniformGrid>
                     <TabControl  Height="140" Width="250" Visibility="{Binding ElementName=check2,Path=IsChecked,Converter={StaticResource Converter1}}">
                         <TabItem Header="Demo1"  >
                             <Button Content="Demo1"></Button>
