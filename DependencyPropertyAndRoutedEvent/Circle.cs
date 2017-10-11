@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace DependencyPropertyAndRoutedEvent
@@ -70,7 +71,8 @@ namespace DependencyPropertyAndRoutedEvent
         protected override void OnRender(DrawingContext drawingContext)
         {
             var radius = Math.Min(ActualWidth, ActualHeight) / 2;
-            drawingContext.DrawEllipse(Fill,new Pen(), new Point(ActualWidth / 2, ActualHeight / 2),radius,radius);
+            Pen pen = new Pen() { Thickness= Thickness,Brush=Brushes.Green};
+            drawingContext.DrawEllipse(Fill,pen, new Point(ActualWidth / 2, ActualHeight / 2),radius,radius);
         }
     }
 }
