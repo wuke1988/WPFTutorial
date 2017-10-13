@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectXDemo", "DirectXDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{F5A85434-E69F-41FB-A50C-022626549079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingDemo", "Binding\BindingDemo.csproj", "{D8CD0BBA-5E73-4B84-BB16-65E0578DCC5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{F5A85434-E69F-41FB-A50C-022626549079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5A85434-E69F-41FB-A50C-022626549079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5A85434-E69F-41FB-A50C-022626549079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CD0BBA-5E73-4B84-BB16-65E0578DCC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CD0BBA-5E73-4B84-BB16-65E0578DCC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CD0BBA-5E73-4B84-BB16-65E0578DCC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CD0BBA-5E73-4B84-BB16-65E0578DCC5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{89FE7E73-FC31-4407-B4EB-9080F770FDFA} = {9FB5365C-77C2-4EFC-AAA8-747A20F17C0F}
 		{2BF17DF9-4E74-48BF-A9F3-DCF7E4CE666A} = {9FB5365C-77C2-4EFC-AAA8-747A20F17C0F}
 		{F5A85434-E69F-41FB-A50C-022626549079} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
+		{D8CD0BBA-5E73-4B84-BB16-65E0578DCC5F} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}

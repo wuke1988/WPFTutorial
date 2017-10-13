@@ -1,0 +1,54 @@
+﻿<Window x:Class="BindingDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Binding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0">
+            <Slider Name="sliderFontSize" Margin="3" Minimum="1" Maximum="40" Value="10" TickFrequency="1" TickPlacement="TopLeft"></Slider>
+            <!--绑定到其它元素，采用TwoWay方式-->
+                <Label  Name="label1" Content="Simple Text" 
+                    FontSize="{Binding ElementName=sliderFontSize,Path=Value,Mode=TwoWay}"></Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Set to Small"  Margin="10" Click="Button_Click"></Button>
+                <Button Content="Set to Normal" Margin="10" Click="Button_Click_1"></Button>
+                <Button Content="Set to Large"  Margin="10" Click="Button_Click_2"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Slider Name="sliderFontSize1" Margin="3" Minimum="1" Maximum="40" Value="10" TickFrequency="1" TickPlacement="TopLeft"></Slider>
+            <TextBox Name="textBox"></TextBox>
+            <ListBox Name="listbox">
+                <ListBoxItem  Content="Blue" Tag="Blue"></ListBoxItem>
+                <ListBoxItem  Content="Red" Tag="Red"></ListBoxItem>
+                <ListBoxItem  Content="Green" Tag="Green"></ListBoxItem>
+            </ListBox>
+            <!--多绑定到其它元素，采用TwoWay方式-->
+            <Label  Name="label2"
+                    FontSize="{Binding ElementName=sliderFontSize1,Path=Value,Mode=TwoWay}"
+                    Foreground="{Binding ElementName=listbox,Path=SelectedItem.Tag}"
+                    Content="{Binding ElementName=textBox,Path=Text}"></Label>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <!--将slider的值约束为整数：IsSnapToTickEnabled-->
+            <Slider Name="sliderFontSize2" Margin="3" Minimum="1" Maximum="40" Value="10"                    
+                    IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="TopLeft"></Slider>
+            <!--反向的变化传递-从目标到源不会立即发生，它的行为由UpdateSourceTrigger控制-->
+            <Label  Name="label3" Content="Simple Text" 
+                    FontSize="{Binding ElementName=sliderFontSize2,Path=Value}"></Label>
+            <TextBox Text="{Binding ElementName=sliderFontSize2,Path=Value,Mode=TwoWay,Delay=500,
+                UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
