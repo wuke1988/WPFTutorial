@@ -1,0 +1,45 @@
+﻿<Window x:Class="Command.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Command"
+        mc:Ignorable="d"
+        Title="Window2" Height="300" Width="300">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="NewCommand_Executed"></CommandBinding>
+        <CommandBinding Command="Open" Executed="OpenCommand_Executed"></CommandBinding>
+        <CommandBinding Command="Save" Executed="SaveCommand_Executed" CanExecute="SaveCommand_CanExecuted"></CommandBinding>
+        <CommandBinding Command="local:DataCommands.Requery" Executed="RequeryCommand_Executed" ></CommandBinding>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Command="New"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel  Grid.Row="1" Orientation="Horizontal">
+            <ToolBar>
+                <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="New"></Button>
+                <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Open"></Button>
+                <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Save"></Button>
+            </ToolBar>
+            <ToolBar>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Cut"></Button>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Copy"></Button>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Paste"></Button>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="local:DataCommands.Requery"></Button>
+            </ToolBar>
+        </StackPanel>
+
+        <RichTextBox Name="textBox" Grid.Row="2" TextChanged="RichTextBox_TextChanged"></RichTextBox>
+    </Grid>
+</Window>

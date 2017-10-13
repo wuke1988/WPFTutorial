@@ -1,0 +1,19 @@
+﻿<Window x:Class="Command.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Command"
+        mc:Ignorable="d"
+        Title="CommandDemoWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding  Command="ApplicationCommands.New" Executed="NewCommand_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Grid>
+        <StackPanel>
+            <Button Content="New" Command="ApplicationCommands.New"></Button>
+            <Button Content="New2" Command="ApplicationCommands.New"></Button>
+            <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="ApplicationCommands.New"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

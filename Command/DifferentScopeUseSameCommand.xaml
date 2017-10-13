@@ -1,0 +1,49 @@
+﻿<Window x:Class="Command.DifferentScopeUseSameCommand"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Command"
+        mc:Ignorable="d"
+        Title="DifferentScopeUseSameCommand" Height="300" Width="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Command="New"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel  Grid.Row="1" Orientation="Horizontal">
+            <ToolBar>
+                <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="New"></Button>
+                <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Open"></Button>
+                <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Save"></Button>
+            </ToolBar>
+            <ToolBar>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Cut"></Button>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Copy"></Button>
+                <Button  Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="Paste"></Button>
+            </ToolBar>
+        </StackPanel>
+
+        <RichTextBox Name="textBox1" Grid.Row="2">
+            <RichTextBox.CommandBindings>
+                <CommandBinding Command="Save" Executed="SaveCommand_Executed"></CommandBinding>
+            </RichTextBox.CommandBindings>
+        </RichTextBox>
+        <RichTextBox Name="textBox2" Grid.Row="3" >
+            <RichTextBox.CommandBindings>
+                <CommandBinding Command="Save" Executed="SaveCommand_Executed"></CommandBinding>
+            </RichTextBox.CommandBindings>
+        </RichTextBox>
+    </Grid>
+</Window>
