@@ -1,0 +1,44 @@
+﻿<Window x:Class="StyleDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StyleDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <!--如果采用Key,控件将用style={staticresource keyid} 来对应。Style x:Key="BigFontButtonStyle"-->
+        <!--如果采用TargetType，就相当于 key =TargetType,此时再设置x:Key将造成系统混乱，不能达到效果-->
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" To="22" Storyboard.TargetProperty="FontSize"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" To="12" Storyboard.TargetProperty="FontSize"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Use Event Trigger" Height="50"  >
+            </Button>
+            <!--为控件规避使用默认样式 Style="{x:Null}" -->
+            <Button Content="Use Event Trigger" Height="50"  Style="{x:Null}" >
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

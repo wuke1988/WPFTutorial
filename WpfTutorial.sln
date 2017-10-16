@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceDemo", "ResourceDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceLibrary", "WpfCustomControlLibrary1\ResourceLibrary.csproj", "{4C86B87C-39EB-4CC4-9634-09A76432589E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleDemo", "StyleDemo\StyleDemo.csproj", "{7689108E-B285-4709-A660-CF23C0CCE762}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{4C86B87C-39EB-4CC4-9634-09A76432589E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C86B87C-39EB-4CC4-9634-09A76432589E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C86B87C-39EB-4CC4-9634-09A76432589E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7689108E-B285-4709-A660-CF23C0CCE762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7689108E-B285-4709-A660-CF23C0CCE762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7689108E-B285-4709-A660-CF23C0CCE762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7689108E-B285-4709-A660-CF23C0CCE762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{B4F50BC6-8F0A-4E66-878E-A870211E4B9A} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
 		{709F7341-4D35-4CA9-B175-9704AE8757BF} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
 		{4C86B87C-39EB-4CC4-9634-09A76432589E} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
+		{7689108E-B285-4709-A660-CF23C0CCE762} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}
