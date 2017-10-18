@@ -1,0 +1,19 @@
+﻿<Window x:Class="CustomContentTemplate.GradientButtonDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomContentTemplate"
+        mc:Ignorable="d"
+        Title="GradientButtonDemo" Height="320" Width="300">
+    <Grid>
+        <Grid>
+            <StackPanel>
+                <Button Margin="20" Padding="5" Template="{StaticResource ButtonTemplate}" Content="A Simple Button With a Custom Template "></Button>
+                <Button Margin="20" Padding="5" Content="Another Button With a Custom Template "></Button>
+                <Button Margin="20" Padding="5" Style="{StaticResource CustomButtonStyle}" Content="A Third Button With a Custom Template "></Button>
+                <Button Margin="20" Padding="5" Style="{StaticResource CustomButtonStyle}" Content="A Disabled Button"  IsEnabled="False"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

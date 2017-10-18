@@ -53,11 +53,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceDemo", "ResourceDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceLibrary", "WpfCustomControlLibrary1\ResourceLibrary.csproj", "{4C86B87C-39EB-4CC4-9634-09A76432589E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleDemo", "StyleDemo\StyleDemo.csproj", "{7689108E-B285-4709-A660-CF23C0CCE762}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleBehaviorDemo", "StyleDemo\StyleBehaviorDemo.csproj", "{7689108E-B285-4709-A660-CF23C0CCE762}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1VisualTreeDisplayDemo", "VisualTreeDisplayDemo\1VisualTreeDisplayDemo.csproj", "{32DF4B63-CD7A-457C-9D86-5706491EB4B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ControlTemplateBrowserDemo", "2ControlTemplateBrowserDemo\2ControlTemplateBrowserDemo.csproj", "{F7C43951-56A2-4468-BE8F-2BD0C3F09667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3CustomContentTemplate", "CustomContentTemplate\3CustomContentTemplate.csproj", "{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +147,10 @@ Global
 		{F7C43951-56A2-4468-BE8F-2BD0C3F09667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7C43951-56A2-4468-BE8F-2BD0C3F09667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7C43951-56A2-4468-BE8F-2BD0C3F09667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +176,7 @@ Global
 		{7689108E-B285-4709-A660-CF23C0CCE762} = {60C403DF-48DC-422C-90DC-F1DC40D70D9C}
 		{32DF4B63-CD7A-457C-9D86-5706491EB4B6} = {D92016C8-3B73-465B-8DD9-559F612F091C}
 		{F7C43951-56A2-4468-BE8F-2BD0C3F09667} = {D92016C8-3B73-465B-8DD9-559F612F091C}
+		{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7} = {D92016C8-3B73-465B-8DD9-559F612F091C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}

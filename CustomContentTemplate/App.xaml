@@ -1,0 +1,15 @@
+﻿<Application x:Class="CustomContentTemplate.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CustomContentTemplate"
+             StartupUri="ListBoxDemo.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme\SimpleButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Theme\Button.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Theme\ListBox.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

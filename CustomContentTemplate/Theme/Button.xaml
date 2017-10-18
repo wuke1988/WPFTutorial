@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CustomContentTemplate">
+    <!--定义模板要使用的资源-->
+    <RadialGradientBrush x:Key="HighlightBackground" RadiusX="1" RadiusY="5"
+                         GradientOrigin="0.5,0.3">
+        <GradientStop Color="White" Offset="0"></GradientStop>
+        <GradientStop Color="Blue"  Offset=".4"></GradientStop>
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="PressedBackground" RadiusX="1" RadiusY="5"
+                         GradientOrigin="0.5,0.3">
+        <GradientStop Color="White" Offset="0"></GradientStop>
+        <GradientStop Color="Blue" Offset="1"></GradientStop>
+    </RadialGradientBrush>
+    <SolidColorBrush x:Key="DefaultBackground" Color="Blue"></SolidColorBrush>
+    <SolidColorBrush x:Key="DisabledBackground" Color="Gray"></SolidColorBrush>
+    <RadialGradientBrush x:Key="Border" RadiusX="1" RadiusY="5"
+                         GradientOrigin="0.5,0.3">
+        <GradientStop Color="White" Offset="0"></GradientStop>
+        <GradientStop Color="Blue"  Offset="1"></GradientStop>
+    </RadialGradientBrush>
+
+    <!--定义控件模板-->
+    <ControlTemplate x:Key="GradientButtonTemplate" TargetType="{x:Type Button}">
+        <!--BorderBrush="{TemplateBinding BorderBrush}"活编码-->
+        <Border Name="Border"  BorderThickness="2" CornerRadius="2"              
+                BorderBrush="{TemplateBinding BorderBrush}"
+                Background="{TemplateBinding Background}" 
+                TextBlock.Foreground="{TemplateBinding TextBlock.Foreground}">
+            <Grid>
+                <Rectangle Name="FocusCue" Visibility="Hidden" Stroke="Black"
+                           StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True"></Rectangle>
+                <ContentPresenter Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"></ContentPresenter>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <!--硬编码，控件模板硬编码了细节控制，不便于控件模板的复用，故将细节控制转移到样式中-->
+            <!--Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource HighlightBackground}"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed"  Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBackground}"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackground}"></Setter>
+                </Trigger> -->
+
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="FocusCue" Property="Visibility" Value="Visible"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--设置样式（样式中再配置控件模板的细节）-->
+    <!--<Style  TargetType="{x:Type Button}">若不设置key 则会自动应用到所有的目标（Buttton）上-->
+    <Style x:Key="CustomButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Control.Template" Value="{StaticResource GradientButtonTemplate}"></Setter>
+         <!--在具体样式中再设置细节-->
+        <Setter Property="BorderBrush" Value="{StaticResource Border}"></Setter>
+        <Setter Property="Background" Value="{StaticResource DefaultBackground}"></Setter>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource DefaultBackground}"></Setter>
+        <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource HighlightBackground}"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed"  Value="True">
+                    <Setter Property="Background" Value="{StaticResource PressedBackground}"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{StaticResource DisabledBackground}"></Setter>
+                </Trigger> 
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>
