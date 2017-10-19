@@ -11,8 +11,16 @@
         <StackPanel>
             <uc:ColorPickerUserControl Name="colorPicker1" Color="Yellow" 
                                        ColorChanged="colorPicker_ColorChanged" Margin="2" Padding="3">
+                <uc:ColorPickerUserControl.Style>
+                    <Style TargetType="uc:ColorPickerUserControl">
+                        <Setter Property="Background" Value="Beige"></Setter>
+                    </Style>
+                </uc:ColorPickerUserControl.Style>
             </uc:ColorPickerUserControl>
-            
+            <uc:ColorPicker Name="colorPicker2" Color="Yellow" 
+                            Margin="2" Padding="3"></uc:ColorPicker>
+
+            <Button Content="Undo" Command="Undo" CommandTarget="{Binding ElementName=colorPicker1}"></Button>
             <TextBlock Name="txtBlock" Margin="2" Padding="3"></TextBlock>
         </StackPanel>
        
