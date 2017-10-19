@@ -13,7 +13,7 @@
         <StackPanel>
             <Button Content="New" Command="ApplicationCommands.New"></Button>
             <Button Content="New2" Command="ApplicationCommands.New"></Button>
-            <Button Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Command="ApplicationCommands.New"></Button>
+            <Button Command="ApplicationCommands.New" Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}"></Button>
         </StackPanel>
     </Grid>
 </Window>

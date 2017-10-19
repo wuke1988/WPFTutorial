@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ColorPickerUserControlTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +85,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColorPickerUserControlTest.xaml.cs">
+      <DependentUpon>ColorPickerUserControlTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="GradientButtonDemo.xaml.cs">
       <DependentUpon>GradientButtonDemo.xaml</DependentUpon>
@@ -118,6 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\4CustomElement\4CustomElement.csproj">
+      <Project>{74336048-f48e-4a8b-9574-432067f29460}</Project>
+      <Name>4CustomElement</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
