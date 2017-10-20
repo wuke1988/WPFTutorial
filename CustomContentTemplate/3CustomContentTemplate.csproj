@@ -58,6 +58,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FlipPanelTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,11 +97,17 @@
     <Compile Include="ColorPickerUserControlTest.xaml.cs">
       <DependentUpon>ColorPickerUserControlTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlipPanelTest.xaml.cs">
+      <DependentUpon>FlipPanelTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GradientButtonDemo.xaml.cs">
       <DependentUpon>GradientButtonDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListBoxDemo.xaml.cs">
       <DependentUpon>ListBoxDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SimpleCustomButton.xaml.cs">
       <DependentUpon>SimpleCustomButton.xaml</DependentUpon>

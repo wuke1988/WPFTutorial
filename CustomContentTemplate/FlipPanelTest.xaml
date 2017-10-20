@@ -1,0 +1,40 @@
+﻿<Window x:Class="CustomContentTemplate.FlipPanelTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomContentTemplate"
+        xmlns:uc="clr-namespace:_4CustomElement;assembly=4CustomElement"
+        mc:Ignorable="d"
+        Title="FlipPanelTest" Height="300" Width="300">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <uc:FlipPanel x:Name="panel" BorderBrush="DarkOrange"  BorderThickness="3" Margin="10">
+            <uc:FlipPanel.FrontContent>
+                <StackPanel Margin="6">
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16" Foreground="DarkOrange">
+                        This is  the front side of the FlipPanel.
+                    </TextBlock>
+                    <Button Content="Button One" Margin="3" Padding="3"></Button>
+                    <Button Content="Button Two" Margin="3" Padding="3"></Button>
+                    <Button Content="Button Three" Margin="3" Padding="3"></Button>
+                    <Button Content="Button Four" Margin="3" Padding="3"></Button>
+                </StackPanel>
+            </uc:FlipPanel.FrontContent>
+
+            <uc:FlipPanel.BackContent>
+                <Grid Margin="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16" Foreground="DarkMagenta">
+                        This is  the back side of the FlipPanel.
+                    </TextBlock>
+                    <Button Grid.Row="1" Content="Flip back to Front" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Margin="3" Padding="10" Click="Button_Click"></Button>
+                </Grid>
+            </uc:FlipPanel.BackContent>
+        </uc:FlipPanel>
+    </Grid>
+</Window>
