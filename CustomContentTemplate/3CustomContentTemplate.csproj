@@ -58,6 +58,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FlipPanelAlternateTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FlipPanelTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +100,9 @@
     </Compile>
     <Compile Include="ColorPickerUserControlTest.xaml.cs">
       <DependentUpon>ColorPickerUserControlTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlipPanelAlternateTemplate.xaml.cs">
+      <DependentUpon>FlipPanelAlternateTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="FlipPanelTest.xaml.cs">
       <DependentUpon>FlipPanelTest.xaml</DependentUpon>

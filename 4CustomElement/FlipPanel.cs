@@ -67,6 +67,11 @@ namespace _4CustomElement
             if(flipButton!=null)
                 flipButton.Click += FlipButton_Click;
 
+            ToggleButton flipButtonAlternate = base.GetTemplateChild("PART_FlipButtonAlternate") as ToggleButton;
+            if (flipButtonAlternate != null)
+                flipButtonAlternate.Click += FlipButton_Click;
+
+
             this.ChangeVisualState(false);
         }
 
