@@ -22,9 +22,13 @@
             <Button>FlipPanelAlternateTemplate</Button>
             
             <Button>MaskedTextBoxTest</Button>
+            
             <Button>WrapBreakPanelTest</Button>
+            
             <Button>CustomDrawnElementTest</Button>
- 
+            
+            <Button>CustomDrawnElementChrome</Button>
+
 
         </StackPanel>
     </Grid>

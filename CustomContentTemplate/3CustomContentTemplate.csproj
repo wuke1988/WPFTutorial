@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="ColorPickerUserControlTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomDrawnElementChrome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomDrawnElementTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +110,12 @@
     </Compile>
     <Compile Include="ColorPickerUserControlTest.xaml.cs">
       <DependentUpon>ColorPickerUserControlTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDrawnElementChrome.xaml.cs">
+      <DependentUpon>CustomDrawnElementChrome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDrawnElementTest.xaml.cs">
+      <DependentUpon>CustomDrawnElementTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="FlipPanelAlternateTemplate.xaml.cs">
       <DependentUpon>FlipPanelAlternateTemplate.xaml</DependentUpon>
