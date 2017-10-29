@@ -1,0 +1,23 @@
+﻿<Window x:Class="_1DataBinding.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1DataBinding"
+        mc:Ignorable="d"
+        Title="Menu" Height="350" Width="525">
+    <Grid>
+        <StackPanel Margin="5" Button.Click="ButtonClick">
+            <Button>BindProductObject</Button>
+            <Button>EditProductObject</Button>
+            <Button>BindToCollection</Button>
+            <Button>VirtualizationTest</Button>
+
+            <Button>ValidationTest</Button>
+            <Button>BindingGroupValidation</Button>
+
+            <Button>BindToObjectDataProvider</Button>
+            <Button>BindToXmlDataProvider</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataBindingTutorial", "WpfDataBindingTutorial\WpfDataBindingTutorial.csproj", "{286F2A11-94CC-444D-9086-F24FA7C37047}"
 EndProject
@@ -62,6 +62,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3CustomContentTemplate", "CustomContentTemplate\3CustomContentTemplate.csproj", "{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4CustomElement", "4CustomElement\4CustomElement.csproj", "{74336048-F48E-4A8B-9574-432067F29460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1DataBinding", "1DataBinding\1DataBinding.csproj", "{5EF13D4D-257E-41FD-835B-A41D7C507479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0StoreDatabase", "0StoreDatabase\0StoreDatabase.csproj", "{4572A281-1882-44FA-AF6C-B30BF5049C27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +161,14 @@ Global
 		{74336048-F48E-4A8B-9574-432067F29460}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74336048-F48E-4A8B-9574-432067F29460}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74336048-F48E-4A8B-9574-432067F29460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF13D4D-257E-41FD-835B-A41D7C507479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF13D4D-257E-41FD-835B-A41D7C507479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF13D4D-257E-41FD-835B-A41D7C507479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF13D4D-257E-41FD-835B-A41D7C507479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -184,6 +196,8 @@ Global
 		{F7C43951-56A2-4468-BE8F-2BD0C3F09667} = {D92016C8-3B73-465B-8DD9-559F612F091C}
 		{7DF9E2F2-82CD-4B3E-87D3-AC2017590BA7} = {D92016C8-3B73-465B-8DD9-559F612F091C}
 		{74336048-F48E-4A8B-9574-432067F29460} = {D92016C8-3B73-465B-8DD9-559F612F091C}
+		{5EF13D4D-257E-41FD-835B-A41D7C507479} = {458BAF47-3CAC-44DB-A9F8-158E8C78B49B}
+		{4572A281-1882-44FA-AF6C-B30BF5049C27} = {458BAF47-3CAC-44DB-A9F8-158E8C78B49B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}
