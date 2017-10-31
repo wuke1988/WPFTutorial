@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _0StoreDatabase
 {
-    public class Product : INotifyPropertyChanged
+    public class Product : INotifyPropertyChanged,INotifyDataErrorInfo
     {
         private string modelNumber;
         public string ModelNumber
@@ -16,6 +17,27 @@ namespace _0StoreDatabase
             set
             {
                 modelNumber = value;
+
+                bool valid = true;
+                foreach (char c in modelNumber)
+                {
+                    if (!Char.IsLetterOrDigit(c))
+                    {
+                        valid = false;
+                        break;
+                    }
+                }
+                if (!valid)
+                {
+                    List<String> error = new List<String>();
+                    error.Add("ModelNumber Can only contain letters and numbers");
+                    SetErrors("ModelNumber", error);
+                }
+                else
+                {
+                    ClearErrors("ModelNumber");
+                }
+
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(ModelNumber)));
             }
         }
@@ -36,8 +58,13 @@ namespace _0StoreDatabase
             get { return unitCost; }
             set
             {
-                unitCost = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("UnitCost"));
+                if (value < 0)
+                    throw new ArgumentException("UnitCost can not be negative.");
+                else
+                {
+                    unitCost = value;
+                    OnPropertyChanged(new PropertyChangedEventArgs("UnitCost"));
+                }
             }
         }
 
@@ -75,6 +102,7 @@ namespace _0StoreDatabase
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyChanged(PropertyChangedEventArgs e)
         {
             if(PropertyChanged!=null)
@@ -88,7 +116,45 @@ namespace _0StoreDatabase
             get { return dateAdded; }
             set { dateAdded = value; }
         }
+        #region 实现INotifyDataErrorInfo接口
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
+        private Dictionary<string, List<String>> errors = new Dictionary<string, List<string>>();
+
+        public bool HasErrors
+        {
+            get
+            {
+                return errors.Count>0;
+            }
+        }
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            if (!string.IsNullOrEmpty(propertyName))
+                return errors.Values;
+            else
+            {
+                if (errors.ContainsKey(propertyName))
+                    return errors[propertyName];
+            }
+            return null;
+        }
+        private void SetErrors(string propertyName,List<String> error)
+        {
+            errors.Remove(propertyName);
+           
+            errors.Add(propertyName, error);
+            
+            ErrorsChanged?.Invoke(this,new DataErrorsChangedEventArgs(propertyName));
+        }
+        private void ClearErrors(string propertyName)
+        {
+            if (errors.ContainsKey(propertyName))
+                errors.Remove(propertyName);
+        }
+
+        #endregion
         /// <summary>
         /// 构造函数1
         /// </summary>
@@ -146,5 +212,7 @@ namespace _0StoreDatabase
         {
             return ModelName + " (" + ModelNumber + ")";
         }
+
+
     }
 }

@@ -4,8 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_1DataBinding"
+        xmlns:ref="clr-namespace:_0StoreDatabase;assembly=0StoreDatabase"
         mc:Ignorable="d"
         Title="EditProductObject" Height="300" Width="300">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <!-- (Validation.Errors)[0].ErrorContent:针对数据属性校验直接抛出的异常;-->
+                    <!--如果采用继承INotifyDataErrorInfo 用GetError返回的异常则无效，
+                    因为GetError返回为List~Sting，需要强制转换(e.Error.ErrorContent as List<string>)[0].ToString()-->
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self},Path=(Validation.Errors)[0].ErrorContent}"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -24,34 +37,52 @@
             <TextBox Name="textBox" Margin="5" Grid.Column="1">356</TextBox>
             <Button Margin="3" Content="Get Product" Grid.Column="2" Click="Button_Click"></Button>
         </Grid>
-        <Border Grid.Row="1" Margin="7" Padding="7" Background="LightSteelBlue">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="7">Model Number:</TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Path= ModelNumber}"></TextBox>
-                <TextBlock Margin="7" Grid.Row="1">Model Name:</TextBlock>
-                <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=ModelName}"></TextBox>
-                <TextBlock Margin="7" Grid.Row="2">Unit Cost:</TextBlock>
-                <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Text="{Binding Path=UnitCost}"></TextBox>
-                <TextBlock Margin="7,7,7,0" Grid.Row="3">Description:</TextBlock>
-                <TextBox Margin="7"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap"
+        <Grid Grid.Row="1">
+            <Border Grid.Row="1" Margin="7" Padding="7" Background="LightSteelBlue">
+                <Grid Name="gridProductDetail">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="7">Model Number:</TextBlock>
+                    <TextBox Name="txtModelNumber" Grid.Row="0" Grid.Column="1" Margin="5" 
+                         Text="{Binding Path= ModelNumber,
+                                ValidatesOnNotifyDataErrors=True,
+                                NotifyOnValidationError=True}" Validation.Error="txtModelNumber_Error">
+                    </TextBox>
+                    <TextBlock Margin="7" Grid.Row="1">Model Name:</TextBlock>
+                    <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=ModelName}"></TextBox>
+                    <TextBlock Margin="7" Grid.Row="2">Unit Cost:</TextBlock>
+                    <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Validation.Error="TextBox_Error">
+                        <TextBox.Text>
+                            <Binding Path="UnitCost">
+                                <Binding.ValidationRules>
+                                    <!--一般情况下两种验证都加上，自定义验证处理业务逻辑错误，异常验证处理其它诸如转换异常-->
+                                    <!--<ref:PositivePriceRule Max="999"></ref:PositivePriceRule>-->
+                                    <ExceptionValidationRule></ExceptionValidationRule>
+                                </Binding.ValidationRules>
+                                <Binding.ValidatesOnNotifyDataErrors>True</Binding.ValidatesOnNotifyDataErrors>
+                                <Binding.NotifyOnValidationError>True</Binding.NotifyOnValidationError>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBlock Margin="7,7,7,0" Grid.Row="3">Description:</TextBlock>
+                    <TextBox Margin="7"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap"
                          VerticalScrollBarVisibility="Visible" Text="{Binding Path=Description}"></TextBox>
-                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Button Margin="3"  Content="Increase Price" Click="Button_Click_1"></Button>
-                    <Button Margin="3"  Content="Update" Click="Button_Click_2"></Button>
-                </StackPanel>
-            </Grid>
-        </Border>
+                    <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button Margin="3"  Content="Increase Price" Click="Button_Click_1"></Button>
+                        <Button Margin="3"  Content="Update" Click="Button_Click_2"></Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
