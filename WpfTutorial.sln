@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1DataBinding", "1DataBindin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0StoreDatabase", "0StoreDatabase\0StoreDatabase.csproj", "{4572A281-1882-44FA-AF6C-B30BF5049C27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2FormatDataBinding", "2FormatDataBinding\2FormatDataBinding.csproj", "{0F0887E4-907B-4B47-8AAA-D0C558488F2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +171,10 @@ Global
 		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4572A281-1882-44FA-AF6C-B30BF5049C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0887E4-907B-4B47-8AAA-D0C558488F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0887E4-907B-4B47-8AAA-D0C558488F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0887E4-907B-4B47-8AAA-D0C558488F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0887E4-907B-4B47-8AAA-D0C558488F2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +204,7 @@ Global
 		{74336048-F48E-4A8B-9574-432067F29460} = {D92016C8-3B73-465B-8DD9-559F612F091C}
 		{5EF13D4D-257E-41FD-835B-A41D7C507479} = {458BAF47-3CAC-44DB-A9F8-158E8C78B49B}
 		{4572A281-1882-44FA-AF6C-B30BF5049C27} = {458BAF47-3CAC-44DB-A9F8-158E8C78B49B}
+		{0F0887E4-907B-4B47-8AAA-D0C558488F2F} = {458BAF47-3CAC-44DB-A9F8-158E8C78B49B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}

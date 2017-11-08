@@ -1,0 +1,52 @@
+﻿<Window x:Class="_2FormatDataBinding.MoreValueConverters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2FormatDataBinding"
+        mc:Ignorable="d"
+        Title="MoreValueConverters" Height="500" Width="300" >
+    <Window.Resources>
+        <local:ImagePathConverter x:Key="ImagePathConverter"></local:ImagePathConverter>
+        <local:PriceToBackgroundConverter x:Key="PriceToBackgroundConverter" 
+                                          MinimumPriceToHighlight="10" DefaultBrush="{x:Null}" HeighBrush="Orange"></local:PriceToBackgroundConverter>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ListBox Grid.Row="0" Name="lstProducts" DisplayMemberPath="ModelName"></ListBox>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Right" Margin="5,2,5,10">
+                <Button Margin="2 0 2 0" Padding="2" Click="cmdGetProducts_Click">Get Products</Button>
+            </StackPanel>
+            <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" ResizeBehavior="PreviousAndNext" Height="5"></GridSplitter>
+        </Grid>
+        <Border Grid.Row="1"  Padding="7"
+                DataContext="{Binding ElementName=lstProducts,Path=SelectedItem}" 
+                Background="{Binding Path=UnitCost,Converter={StaticResource PriceToBackgroundConverter}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="7">Model Number:</TextBlock>
+                <TextBox Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber}"></TextBox>
+                <TextBlock Margin="7" Grid.Row="1">Model Name:</TextBlock>
+                <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=ModelName}"></TextBox>
+                <Image Grid.Column="1" Grid.Row="2" Margin="5" Stretch="None" HorizontalAlignment="Center"
+                       Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConverter}}"></Image>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
