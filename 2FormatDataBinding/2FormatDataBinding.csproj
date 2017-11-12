@@ -57,6 +57,21 @@
     <Compile Include="CheckBoxList.xaml.cs">
       <DependentUpon>CheckBoxList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxSelectionBox.xaml.cs">
+      <DependentUpon>ComboBoxSelectionBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTemplateControls.xaml.cs">
+      <DependentUpon>DataTemplateControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTemplateImages.xaml.cs">
+      <DependentUpon>DataTemplateImages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTemplateList.xaml.cs">
+      <DependentUpon>DataTemplateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpandingDataTemplate.xaml.cs">
+      <DependentUpon>ExpandingDataTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImagePathConverter.cs" />
     <Compile Include="ListStyles.xaml.cs">
       <DependentUpon>ListStyles.xaml</DependentUpon>
@@ -73,10 +88,37 @@
     <Compile Include="StylesSelector.xaml.cs">
       <DependentUpon>StylesSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TemplateSelector.cs" />
     <Compile Include="ValueConverter.xaml.cs">
       <DependentUpon>ValueConverter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VariedTemplates.xaml.cs">
+      <DependentUpon>VariedTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WrappedList.xaml.cs">
+      <DependentUpon>WrappedList.xaml</DependentUpon>
+    </Compile>
     <Page Include="CheckBoxList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboBoxSelectionBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataTemplateControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataTemplateImages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataTemplateList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpandingDataTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,6 +151,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ValueConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VariedTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WrappedList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

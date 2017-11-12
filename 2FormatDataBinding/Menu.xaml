@@ -17,7 +17,6 @@
             <Button>StylesSelector</Button>
 
             <Button>DataTemplateList</Button>
-            <Button>DataTemplateByType</Button>
             <Button>DataTemplateImages</Button>
             <Button>DataTemplateControls</Button>
             <Button>VariedTemplates</Button>

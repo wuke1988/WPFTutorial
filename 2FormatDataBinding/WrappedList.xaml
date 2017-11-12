@@ -1,0 +1,49 @@
+﻿<Window x:Class="_2FormatDataBinding.WrappedList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2FormatDataBinding"
+        xmlns:data="clr-namespace:_0StoreDatabase;assembly=0StoreDatabase"
+        mc:Ignorable="d"
+        Title="WrappedList" Height="308" Width="474">
+    <Window.Resources>
+        <local:ImagePathConverter x:Key="ImagePathConverter"></local:ImagePathConverter>
+        <DataTemplate DataType="{x:Type data:Product}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.Style>
+                    <Style>
+                        <Setter Property="TextBlock.Foreground" Value="Black"></Setter>
+                    </Style>
+                </Grid.Style>
+                <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
+                    <StackPanel Margin="3">
+                        <TextBlock Text="{Binding Path=ModelName}" HorizontalAlignment="Center"></TextBlock>
+
+                        <Image Source="{Binding Path=ProductImagePath, Converter={StaticResource ImagePathConverter}}"
+                     Width="100"
+                     ></Image>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Margin="7,7,7,0" Padding="2" Click="cmdGetProducts_Click">Get Products</Button>
+        <ListBox Grid.Row="1" Name="lstProducts" Margin="7,3,7,10" SnapsToDevicePixels="True" 
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+    </Grid>
+</Window>
