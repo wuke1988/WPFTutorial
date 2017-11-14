@@ -19,6 +19,7 @@ namespace _3DataView
 {
     /// <summary>
     /// FilterCollection.xaml 的交互逻辑
+    /// 实现源自集合的view上进行Filter过滤
     /// </summary>
     public partial class FilterCollection : Window
     {

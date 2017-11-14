@@ -17,6 +17,7 @@ namespace _3DataView
 {
     /// <summary>
     /// NavigateCollection.xaml 的交互逻辑
+    /// 基于view来实现分页控件
     /// </summary>
     public partial class NavigateCollection : Window
     {

@@ -58,6 +58,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FilterDataSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupInRanges.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,6 +80,15 @@
     </Compile>
     <Compile Include="FilterCollection.xaml.cs">
       <DependentUpon>FilterCollection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterDataSet.xaml.cs">
+      <DependentUpon>FilterDataSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupInRanges.xaml.cs">
+      <DependentUpon>GroupInRanges.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupList.xaml.cs">
+      <DependentUpon>GroupList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
@@ -82,6 +103,7 @@
     <Compile Include="NavigateCollection.xaml.cs">
       <DependentUpon>NavigateCollection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PriceRangeProductGrouper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
