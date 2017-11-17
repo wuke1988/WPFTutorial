@@ -54,8 +54,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoundTreeView.xaml.cs">
+      <DependentUpon>BoundTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BoundTreeViewDataSet.xaml.cs">
+      <DependentUpon>BoundTreeViewDataSet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomListViewTest.xaml.cs">
       <DependentUpon>CustomListViewTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DirectoryTreeView.xaml.cs">
+      <DependentUpon>DirectoryTreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TileView.cs" />
     <Page Include="AdvancedListView.xaml">
@@ -66,7 +75,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BoundTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BoundTreeViewDataSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomListViewTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DirectoryTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

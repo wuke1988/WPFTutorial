@@ -18,7 +18,12 @@ namespace _0StoreDatabase
         }
         public DataSet GetCategoriesAndProducts()
         {
-            return ReadDataSet();
+            DataSet ds = ReadDataSet();
+            //DataRelation dataRelation = new DataRelation("CategoryProduct",ds.Tables["Categories"].Columns["CategoryID"],
+            //    ds.Tables["Products"].Columns["CategoryID"]);
+            //ds.Relations.Add(dataRelation);
+
+            return ds;
         }
         public DataTable GetProducts()
         {
