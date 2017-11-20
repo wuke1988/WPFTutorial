@@ -63,9 +63,22 @@
     <Compile Include="CustomListViewTest.xaml.cs">
       <DependentUpon>CustomListViewTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataGridEditing.xaml.cs">
+      <DependentUpon>DataGridEditing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridGrouping.xaml.cs">
+      <DependentUpon>DataGridGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridRowDetails.xaml.cs">
+      <DependentUpon>DataGridRowDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridTest.xaml.cs">
+      <DependentUpon>DataGridTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DirectoryTreeView.xaml.cs">
       <DependentUpon>DirectoryTreeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PositivePriceRule.cs" />
     <Compile Include="TileView.cs" />
     <Page Include="AdvancedListView.xaml">
       <SubType>Designer</SubType>
@@ -84,6 +97,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomListViewTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGridEditing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGridGrouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGridRowDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGridTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
