@@ -44,7 +44,6 @@
                 </DataTemplate>
             </local:TileView.ItemTemplate>
         </local:TileView>
-        
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>

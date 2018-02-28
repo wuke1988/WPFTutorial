@@ -33,24 +33,28 @@
         </TabItem>
         <TabItem Header="WrapPanel">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="430*"/>
+                    <ColumnDefinition Width="77*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition  Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <WrapPanel Grid.Row="0">
+                <WrapPanel Grid.Row="0" Grid.ColumnSpan="2">
                     <Rectangle Fill="Aqua" Width="100" Height="50"></Rectangle>
                     <Rectangle Fill="Brown" Width="200" Height="50"></Rectangle>
                     <Rectangle Fill="Crimson" Width="150" Height="50"></Rectangle>
                     <Rectangle Fill="DarkTurquoise" Width="230" Height="50"></Rectangle>
                 </WrapPanel>
-                <WrapPanel Grid.Row="1" Orientation="Vertical">
+                <WrapPanel Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2">
                     <Rectangle Fill="Red" Width="100" Height="30"/>
                     <Rectangle Fill="Green" Width="100" Height="30"/>
                     <Rectangle Fill="Blue" Width="100" Height="30"/>
                     <Rectangle Fill="Pink" Width="100" Height="30"/>
                 </WrapPanel>
             </Grid>
-            
+
         </TabItem>
         <TabItem  Header="Grid1">
             <Grid>
