@@ -7,4 +7,5 @@
         <ResourceDictionary Source="/4CustomElement;component/themes/ColorPicker.xaml"></ResourceDictionary>
         <ResourceDictionary Source="/4CustomElement;component/themes/FlipPanel.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>

@@ -16,7 +16,7 @@
                             <DockPanel  LastChildFill="False" SnapsToDevicePixels="False">
                                 <Line X1="0" Y1="-1" X2="5" Y2="-1" Stroke="Black" StrokeThickness="1" DockPanel.Dock="Left" VerticalAlignment="Center"></Line>
                                 <Line X1="-1" Y1="0" X2="-1" Y2="5" Stroke="Black" StrokeThickness="1" DockPanel.Dock="Top" VerticalAlignment="Center"></Line>
-                                <Line X1="-5" X2="0" Y1="-1" Y2="-1" Stroke="Black" StrokeThickness="1" DockPanel.Dock="Right" VerticalAlignment="Center"/>
+                                <Line X1="-5" Y1="0" X2="-1" Y2="-1" Stroke="Black" StrokeThickness="1" DockPanel.Dock="Right" VerticalAlignment="Center"/>
                                 <Line X1="-1" X2="-1" Y1="-5" Y2="0" Stroke="Black" StrokeThickness="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center"/>
                             </DockPanel>
                             <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">

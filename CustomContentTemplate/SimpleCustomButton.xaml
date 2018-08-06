@@ -11,6 +11,9 @@
             <Button Margin="20" Padding="5" Template="{StaticResource ButtonTemplate}" Content="A Simple Button With a Custom Template "></Button>
             <Button Margin="20" Padding="5" Content="Another Button With a Custom Template "></Button>
             <Button Margin="20" Padding="5" Content="A Third Button"></Button>
+            <Button Margin="20" Padding="5" >
+                <Image Width="30" Source="HTML5_METER.png"></Image>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
