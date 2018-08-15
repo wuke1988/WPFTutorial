@@ -1,0 +1,15 @@
+﻿<Window x:Class="_3EventAggregatorHandler.Views.OneView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:cal="http://www.caliburnproject.org"
+        xmlns:local="clr-namespace:_3EventAggregatorHandler.Views"
+        mc:Ignorable="d"
+        Title="OneView" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock FontSize="13" HorizontalAlignment="Center">1</TextBlock>
+        <TextBox Margin="5" x:Name="OneMessage"></TextBox>
+        <Button Margin="5" x:Name="OnePublish" Content="Publish" cal:Message.Attach="[Event Click]=[Action Publish()]"/>
+    </StackPanel>
+</Window>

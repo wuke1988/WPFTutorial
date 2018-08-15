@@ -1,0 +1,15 @@
+﻿<Window x:Class="_3EventAggregatorHandler.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3EventAggregatorHandler.Views"
+        mc:Ignorable="d"
+        Title="ShellView" Height="450" Width="800">
+    <StackPanel>
+        <TextBox x:Name="Message"></TextBox>
+        <Button Margin="5"  Content="Publish" cal:Message.Attach="[Event Click]=[Action Publish()]"></Button>
+        <Button Margin="5"  Content="OpenOneWindow" cal:Message.Attach="[Event Click]=[Action OpenOneWin()]"></Button>
+    </StackPanel>
+</Window>

@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0Core", "Core\0Core.csproj"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2Actions", "2Actions\2Actions.csproj", "{D094ACAA-91A6-481A-A64C-F12812FB01B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3EventAggregatorHandler", "3EventAggregatorHandler\3EventAggregatorHandler.csproj", "{C68C3110-F2BF-4A69-9F2E-9C743C1AEE47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -245,6 +247,10 @@ Global
 		{D094ACAA-91A6-481A-A64C-F12812FB01B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D094ACAA-91A6-481A-A64C-F12812FB01B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D094ACAA-91A6-481A-A64C-F12812FB01B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68C3110-F2BF-4A69-9F2E-9C743C1AEE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68C3110-F2BF-4A69-9F2E-9C743C1AEE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68C3110-F2BF-4A69-9F2E-9C743C1AEE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68C3110-F2BF-4A69-9F2E-9C743C1AEE47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -286,6 +292,7 @@ Global
 		{6F7368AA-5F02-426A-9B38-2F3BE5B81051} = {3EFE8E59-563E-4C44-AF5F-39663D89D041}
 		{2A11096A-D8DD-42DE-91D6-9C8130883CAF} = {3EFE8E59-563E-4C44-AF5F-39663D89D041}
 		{D094ACAA-91A6-481A-A64C-F12812FB01B1} = {3EFE8E59-563E-4C44-AF5F-39663D89D041}
+		{C68C3110-F2BF-4A69-9F2E-9C743C1AEE47} = {3EFE8E59-563E-4C44-AF5F-39663D89D041}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09933FC0-49C5-450D-863A-A100A853C00E}
