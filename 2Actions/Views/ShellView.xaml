@@ -1,0 +1,27 @@
+﻿<Window x:Class="_2Actions.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:cal="http://www.caliburnproject.org"
+        xmlns:local="clr-namespace:_2Actions.Views"
+        mc:Ignorable="d"
+        Title="Caliburn.Micro Actions Demo" Height="450" Width="800">
+    <StackPanel>
+        <TextBox x:Name="Name" />
+        <Button Height="30" Margin="0,3" Content="Click Me">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <cal:ActionMessage MethodName="MyClick">
+                        <cal:Parameter Value="{Binding ElementName=Name,Path=Text}"></cal:Parameter>
+                        <cal:Parameter Value="aaabbbccc"></cal:Parameter>
+                    </cal:ActionMessage>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Button Height="30" Margin="0,3" Content="Click Me" cal:Message.Attach="[Event Click]=[Action MyClick()]"></Button>
+        <Button Height="30" Margin="0,3" Content="Click Me" cal:Message.Attach="[Event Click]=[Action MyClick($source,Name.Text)]"></Button>
+        <Button Height="30" Margin="0,3" Content="Click Me" cal:Message.Attach="[Event Click]=[Action MyClick($source,'aaaa')]"></Button>
+    </StackPanel>
+</Window>

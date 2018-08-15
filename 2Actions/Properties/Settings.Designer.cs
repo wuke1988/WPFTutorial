@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WCalculator.Properties
+namespace _2Actions.Properties
 {
 
 
@@ -25,13 +25,6 @@ namespace WCalculator.Properties
             {
                 return defaultInstance;
             }
-        }
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\wuke\\source\\repos\\WPFTutorial\\SimpleCalculator\\bin\\Debug")]
-        public string AddInDirectory
-        {
-            get { return (string)this["AddInDirectory"]; }
         }
     }
 }

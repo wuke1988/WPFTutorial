@@ -44,8 +44,8 @@ namespace _3DataView
 
             view = CollectionViewSource.GetDefaultView(lstProducts.ItemsSource) as ListCollectionView;
             //此时设置IsLiveFiltering = true 指示设置的值是否进行实时过滤
-            view.IsLiveFiltering = true;
-            view.LiveFilteringProperties.Add("UnitCost");
+            //view.IsLiveFiltering = true;
+            //view.LiveFilteringProperties.Add("UnitCost");
 
             view.IsLiveGrouping = true;
             view.LiveGroupingProperties.Add("CategoryName");
@@ -72,7 +72,7 @@ namespace _3DataView
                 {
                     filter = new ProductByPriceFilterer(minimumPrice);
                     view.Filter = filter.FilterItem;
-                    view.Refresh();
+                    //view.Refresh();
                 }
             }
         }
@@ -85,7 +85,7 @@ namespace _3DataView
                 if (Decimal.TryParse(txtMinPrice.Text, out minimumPrice) && (filter != null))
                 {
                     filter.MinimumPrice = minimumPrice;
-                    view.Refresh();
+                    //view.Refresh();
                 }
             }
         }
