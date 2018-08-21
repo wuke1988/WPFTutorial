@@ -1,0 +1,13 @@
+﻿<Window x:Class="_5IResult.Views.MyView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:local="clr-namespace:_5IResult.Views"
+        mc:Ignorable="d"
+        Title="MyView" Height="450" Width="800">
+    <StackPanel>
+        <Button Content="IResult" cal:Message.Attach="[Event Click]=[Action MyIResultClick]"></Button>
+    </StackPanel>
+</Window>
